@@ -3,13 +3,10 @@ const paper = 'Paper';
 const scissors = 'Scissors';
 
 
-// Your game is going to play against the computer. 
-// So begin with a function called getComputerChoice 
-// that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
-// We’ll use this function in the game to make the computer’s play. 
+// Function to randomly generate a computer choice of either Rock, Paper, or Scissors. 
 
 function getComputerChoice() {
-    let randomNumber = Math.floor*(Math.random()*100)
+    let randomNumber = Math.floor(Math.random()*100)
     if (randomNumber < 34) {
         return rock;
     } else if (randomNumber < 66) {
@@ -21,10 +18,16 @@ function getComputerChoice() {
 
 console.log("The computer chose " + getComputerChoice());
 
+// Function to get player selection and accounting for case sensitivity. 
 
+function getPlayerChoice() {
+    let playerChoice = prompt("Enter Rock, Paper, or Scissors.");
+    return playerChoice.toLowerCase();
+}
 
+console.log("The player chose " + getPlayerChoice());
 
-
+// Function to play a single round of Rock Paper Scissors. 
 
 
 
