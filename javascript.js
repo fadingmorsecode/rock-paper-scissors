@@ -1,7 +1,8 @@
 const rock = 'Rock';
 const paper = 'Paper';
 const scissors = 'Scissors';
-let computerSelection = '' 
+let playerCounter = 0;
+let computerCounter = 0;
 
 // Function to randomly generate a computer choice of either Rock, Paper, or Scissors. 
 
@@ -30,31 +31,50 @@ function getPlayerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === rock) {
-    return "It's a tie!"
+    return result = "It's a tie!"
   } else if (playerSelection === "rock" && computerSelection === paper) {
-    return "You lose! Paper beats rock.";
+    return result = "You lose!";
   } else if (playerSelection === "rock" && computerSelection === scissors) {
-    return "You Win! Rock beats scissors.";
+    return result = "You win!";
   } else if (playerSelection === "paper" && computerSelection === paper) {
-    return "It's a tie!";
+    return result = "It's a tie!";
   } else if (playerSelection === "paper" && computerSelection === scissors) {
-    return "You lose! Scissors beats paper.";
+    return result ="You lose!";
   } else if (playerSelection === "paper" && computerSelection === rock) {
-    return "You win! Paper beats rock.";
+    return result = "You win!";
   } else if (playerSelection === "scissors" && computerSelection === scissors) {
-    return "It's a tie!";
+    return result = "It's a tie!";
   } else if (playerSelection === "scissors" && computerSelection === paper) {
-    return "You win! Scissors beats paper.";
+    return result = "You win!";
   } else {
-    return "You lose! Rock beats scissors.";
+    return result = "You lose!";
   } 
 }
 
-playRound(getPlayerChoice(), getComputerChoice());
+// Function to play a 5 round game that keeps score and reports a winner or loser at the end. 
 
+function game() {
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+// Player Score Counter
+    if (result === "You win!") { 
+        playerCounter++;
+    } else if (result === "You lose!") {
+        computerCounter++;
+    } 
+    console.log(playerCounter);
+    console.log(computerCounter);
+// Match Winner 
+    if (i === 4 && playerCounter > computerCounter) {
+        console.log("You win the match!");
+    } else if (i === 4 && playerCounter < computerCounter) {
+        console.log("You lost the game. Bummer!");
+    } else if (i === 4 && playerCounter === computerCounter) {
+        console.log("You tied with the computer!");
+    }
+  }
+}
 
-
-
-
-
-
+game();
