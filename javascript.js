@@ -22,34 +22,64 @@ function getComputerChoice() {
 
 // Function to get player selection and accounting for case sensitivity. 
 
-function getPlayerChoice() {
-    let playerChoice = prompt("Enter Rock, Paper, or Scissors.");
-    return playerChoice.toLowerCase();
-}
+// function getPlayerChoice() {
+//     let playerChoice = prompt("Enter Rock, Paper, or Scissors.");
+//     return playerChoice.toLowerCase();
+// }
 
 // Function to play a single round of Rock Paper Scissors.
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === rock) {
+    console.log("tie");
     return result = "It's a tie!"
   } else if (playerSelection === "rock" && computerSelection === paper) {
+    console.log("lose");
     return result = "You lose!";
   } else if (playerSelection === "rock" && computerSelection === scissors) {
+    console.log("win");
     return result = "You win!";
   } else if (playerSelection === "paper" && computerSelection === paper) {
+    console.log("tie");
     return result = "It's a tie!";
   } else if (playerSelection === "paper" && computerSelection === scissors) {
+    console.log("lose");
     return result ="You lose!";
   } else if (playerSelection === "paper" && computerSelection === rock) {
+    console.log("win");
     return result = "You win!";
   } else if (playerSelection === "scissors" && computerSelection === scissors) {
+    console.log("tie");
     return result = "It's a tie!";
   } else if (playerSelection === "scissors" && computerSelection === paper) {
+    console.log("win");
     return result = "You win!";
   } else {
+    console.log("lose");
     return result = "You lose!";
   } 
 }
+
+const rockbtn = document.querySelector("#rock");
+rockbtn.addEventListener('click', () => {
+  playerSelection = "rock";
+  computerSelection = getComputerChoice();
+  playRound(playerSelection, computerSelection);
+});
+
+const paperbtn = document.querySelector("#paper");
+paperbtn.addEventListener('click', () => {
+  playerSelection = "paper";
+  computerSelection = getComputerChoice();
+  playRound(playerSelection, computerSelection);
+});
+
+const scissorsbtn = document.querySelector("#scissors");
+scissorsbtn.addEventListener('click', () => {
+  playerSelection = "scissors";
+  computerSelection = getComputerChoice();
+  playRound(playerSelection, computerSelection);
+});
 
 // // Function to play a 5 round game that keeps score and reports a winner or loser at the end. 
 
