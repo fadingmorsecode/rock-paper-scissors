@@ -148,6 +148,14 @@ if (outcomeDisplay.textContent === "You won the match!" || outcomeDisplay.textCo
  }
 });
 
+const newGamebttn = document.querySelector('#new-game');
+newGamebttn.addEventListener('click', () => {
+   playerCounter = 0;
+   computerCounter = 0;
+   const div = document.querySelector('#displayResult');
+   div.textContent = " ";
+});
+
 
 
 
