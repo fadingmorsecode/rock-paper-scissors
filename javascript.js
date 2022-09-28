@@ -31,31 +31,40 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === rock) {
-    console.log("tie");
+    const div = document.querySelector('#displayResult');
+    div.textContent = "Tie!";
     return result = "It's a tie!"
   } else if (playerSelection === "rock" && computerSelection === paper) {
-    console.log("lose");
+    const div = document.querySelector('#displayResult');
+    div.textContent = "Lose!";
     return result = "You lose!";
   } else if (playerSelection === "rock" && computerSelection === scissors) {
-    console.log("win");
+    const div = document.querySelector('#displayResult');
+    div.textContent = "Win!";
     return result = "You win!";
   } else if (playerSelection === "paper" && computerSelection === paper) {
-    console.log("tie");
+    const div = document.querySelector('#displayResult');
+    div.textContent = "Tie!";
     return result = "It's a tie!";
   } else if (playerSelection === "paper" && computerSelection === scissors) {
-    console.log("lose");
+    const div = document.querySelector('#displayResult');
+    div.textContent = "Lose!";
     return result ="You lose!";
   } else if (playerSelection === "paper" && computerSelection === rock) {
-    console.log("win");
+    const div = document.querySelector('#displayResult');
+    div.textContent = "Win!";
     return result = "You win!";
   } else if (playerSelection === "scissors" && computerSelection === scissors) {
-    console.log("tie");
+    const div = document.querySelector('#displayResult');
+    div.textContent = "Tie!";
     return result = "It's a tie!";
   } else if (playerSelection === "scissors" && computerSelection === paper) {
-    console.log("win");
+    const div = document.querySelector('#displayResult');
+    div.textContent = "Win!";
     return result = "You win!";
   } else {
-    console.log("lose");
+    const div = document.querySelector('#displayResult');
+    div.textContent = "Lose!";
     return result = "You lose!";
   } 
 }
