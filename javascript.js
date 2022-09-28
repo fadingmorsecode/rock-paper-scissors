@@ -51,30 +51,30 @@ function playRound(playerSelection, computerSelection) {
   } 
 }
 
-// Function to play a 5 round game that keeps score and reports a winner or loser at the end. 
+// // Function to play a 5 round game that keeps score and reports a winner or loser at the end. 
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = getPlayerChoice();
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-// Player Score Counter
-    if (result === "You win!") { 
-        playerCounter++;
-    } else if (result === "You lose!") {
-        computerCounter++;
-    } 
-    console.log(playerCounter);
-    console.log(computerCounter);
-// Match Winner 
-    if (i === 4 && playerCounter > computerCounter) {
-        console.log("You win the match!");
-    } else if (i === 4 && playerCounter < computerCounter) {
-        console.log("You lost the game. Bummer!");
-    } else if (i === 4 && playerCounter === computerCounter) {
-        console.log("You tied with the computer!");
-    }
-  }
-}
+// function game() {
+//   for (let i = 0; i < 5; i++) {
+//     const playerSelection = getPlayerChoice();
+//     const computerSelection = getComputerChoice();
+//     console.log(playRound(playerSelection, computerSelection));
+// // Player Score Counter
+//     if (result === "You win!") { 
+//         playerCounter++;
+//     } else if (result === "You lose!") {
+//         computerCounter++;
+//     } 
+//     console.log(playerCounter);
+//     console.log(computerCounter);
+// // Match Winner 
+//     if (i === 4 && playerCounter > computerCounter) {
+//         console.log("You win the match!");
+//     } else if (i === 4 && playerCounter < computerCounter) {
+//         console.log("You lost the game. Bummer!");
+//     } else if (i === 4 && playerCounter === computerCounter) {
+//         console.log("You tied with the computer!");
+//     }
+//   }
+// }
 
-game();
+// game();
