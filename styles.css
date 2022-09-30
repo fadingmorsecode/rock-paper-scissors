@@ -1,0 +1,249 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    background: #e9c46a;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER CSS */
+.header {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-text {
+    font-size: 55px;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* RESULTS CSS */
+
+.results-container {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.results-text {
+    font-size: 40px;
+    font-family: 'Nunito', sans-serif;
+    color: #e76f51;
+}
+
+/* SCOREBOARD CSS */
+
+.scoreboard-container {
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-scoreboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.player-text-container {
+    display: flex;
+    height: 80px;
+    width: 300px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-score-container {
+    display: flex;
+    height: 150px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-text {
+    font-size: 40px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.player-score {
+    font-size: 70px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.computer-scoreboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.computer-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 300px;
+}
+
+.computer-score-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 300px;
+}
+
+.computer-text {
+    font-size: 40px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.computer-score {
+    font-size: 70px;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* RPS TEXT CSS */
+
+.rps-container {
+    display: flex;
+    height: 210px;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+.rock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid #2a9d8f;
+    border-radius: 9px;
+    height: 100px;
+    width: 350px;
+}
+
+.rock-container:hover {
+    transform: scale(1.2);
+}
+
+.paper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid #2a9d8f;
+    border-radius: 9px;
+    height: 100px;
+    width: 350px;
+}
+
+.paper-container:hover {
+    transform: scale(1.2);
+}
+
+.scissors-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid #2a9d8f;
+    border-radius: 9px;
+    height: 100px;
+    width: 350px;
+}
+
+.scissors-container:hover {
+    transform: scale(1.2);
+}
+
+.rock-text {
+    font-size: 70px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.paper-text {
+    font-size: 70px;
+    font-family: 'Nunito', sans-serif;
+}
+
+.scissors-text {
+    font-size: 70px;
+    font-family: 'Nunito', sans-serif;
+}
+
+
+
+/* FOOTER CSS */
+
+.footer-container {
+    display: flex;
+    background: #f4a261;
+    height: 65px;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer:hover {
+    transform: scale(1.1);
+}
+
+.footer-img {
+    height: 35px;
+    width: 35px;
+}
+
+.footer-text {
+    font-size: 22px;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+.new-game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-game {
+    background: #f4a261;
+    height: 35px;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #264653;
+    animation-name: enticing;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.new-game:hover {
+    cursor: pointer;
+}
+
+@keyframes enticing {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

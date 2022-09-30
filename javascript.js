@@ -3,8 +3,23 @@ const paper = 'Paper';
 const scissors = 'Scissors';
 let playerCounter = 0;
 let computerCounter = 0;
-const outcomeDisplay = document.querySelector('#displayResult');
+const outcomeDisplay = document.querySelector('.results-text');
+const playerScore = document.querySelector('.player-score');
+playerScore.textContent = playerCounter;
+const computerScore = document.querySelector('.computer-score');
+computerScore.textContent = computerCounter;
 
+// Create New Game Button - waiting to be appended once game is over. 
+const ngbttncontainer = document.querySelector('.new-game-container')
+const ngbttn = document.createElement('button');
+ngbttn.textContent = "New Game";
+ngbttn.classList.add('new-game');
+
+// Default results text
+const div = document.querySelector('.results-text');
+div.textContent = "The first to reach 5 points wins";
+
+// Randomly generate the computer's choice. 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random()*100)
     if (randomNumber < 34) {
@@ -19,51 +34,55 @@ function getComputerChoice() {
     }
 }
 
+// Play a single round of rock paper scissors. 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock" && computerSelection === rock) {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Tie!";
+    const div = document.querySelector('.results-text');
+    div.textContent = "It's a tie!";
     return result = "It's a tie!"
   } else if (playerSelection === "rock" && computerSelection === paper) {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Lose!";
+    const div = document.querySelector('.results-text');
+    div.textContent = "You lose! Paper beats rock.";
     return result = "You lose!";
   } else if (playerSelection === "rock" && computerSelection === scissors) {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Win!";
+    const div = document.querySelector('.results-text');
+    div.textContent = "You win! Rock beats scissors.";
     return result = "You win!";
   } else if (playerSelection === "paper" && computerSelection === paper) {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Tie!";
+    const div = document.querySelector('.results-text');
+    div.textContent = "It's a tie!";
     return result = "It's a tie!";
   } else if (playerSelection === "paper" && computerSelection === scissors) {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Lose!";
+    const div = document.querySelector('.results-text');
+    div.textContent = "You lose! Scissors beats paper.";
     return result ="You lose!";
   } else if (playerSelection === "paper" && computerSelection === rock) {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Win!";
+    const div = document.querySelector('.results-text');
+    div.textContent = "You win! Paper beats rock.";
     return result = "You win!";
   } else if (playerSelection === "scissors" && computerSelection === scissors) {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Tie!";
+    const div = document.querySelector('.results-text');
+    div.textContent = "It's a tie!";
     return result = "It's a tie!";
   } else if (playerSelection === "scissors" && computerSelection === paper) {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Win!";
+    const div = document.querySelector('.results-text');
+    div.textContent = "You win! Scissors beats paper.";
     return result = "You win!";
   } else {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Lose!";
+    const div = document.querySelector('.results-text');
+    div.textContent = "You lose! Rock beats scissors";
     return result = "You lose!";
   } 
 }
 
-const rockbtn = document.querySelector("#rock");
+// Rock button triggers playRound function & displays results/match winner.
+const rockbtn = document.querySelector(".rock-container");
 rockbtn.addEventListener('click', () => {
-  if (outcomeDisplay.textContent === "You won the match!" || outcomeDisplay.textContent === "The computer won the match!" || outcomeDisplay.textContent === "Please reset the game to play again.") {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Please reset the game to play again.";
+  if (outcomeDisplay.textContent === "You won the match!" || 
+  outcomeDisplay.textContent === "The computer won the match!" || 
+  outcomeDisplay.textContent === "Game Over.") {
+    const div = document.querySelector('.results-text');
+    div.textContent = "Game Over.";
   } else {
   playerSelection = "rock";
   computerSelection = getComputerChoice();
@@ -71,30 +90,32 @@ rockbtn.addEventListener('click', () => {
 
   if (result === "You win!") {
     playerCounter++
+    playerScore.textContent = playerCounter;
   } else if (result === "You lose!") {
     computerCounter++
+    computerScore.textContent = computerCounter;
   } 
 
-  console.log(`Player Score = ${playerCounter}`);
-  console.log(`Computer Score = ${computerCounter}`)
-
   if (playerCounter === 5) {
-    const div = document.querySelector('#displayResult');
+    const div = document.querySelector('.results-text');
     div.textContent = "You won the match!";
+    ngbttncontainer.appendChild(ngbttn);
   } else if (computerCounter === 5) {
-    const div = document.querySelector('#displayResult');
+    const div = document.querySelector('.results-text');
     div.textContent = "The computer won the match!";
+    ngbttncontainer.appendChild(ngbttn);
   }
  }
 });
 
-
-
-const paperbtn = document.querySelector("#paper");
+// Paper button triggers playRound function & displays results/match winner.
+const paperbtn = document.querySelector(".paper-container");
 paperbtn.addEventListener('click', () => {
-  if (outcomeDisplay.textContent === "You won the match!" || outcomeDisplay.textContent === "The computer won the match!" || outcomeDisplay.textContent === "Please reset the game to play again.") {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Please reset the game to play again.";
+  if (outcomeDisplay.textContent === "You won the match!" || 
+  outcomeDisplay.textContent === "The computer won the match!" || 
+  outcomeDisplay.textContent === "Game Over.") {
+    const div = document.querySelector('.results-text');
+    div.textContent = "Game Over.";
   } else {
   playerSelection = "paper";
   computerSelection = getComputerChoice();
@@ -102,28 +123,32 @@ paperbtn.addEventListener('click', () => {
 
   if (result === "You win!") {
     playerCounter++
+    playerScore.textContent = playerCounter;
   } else if (result === "You lose!") {
     computerCounter++
+    computerScore.textContent = computerCounter;
   } 
 
-  console.log(`Player Score = ${playerCounter}`);
-  console.log(`Computer Score = ${computerCounter}`)
-
   if (playerCounter === 5) {
-    const div = document.querySelector('#displayResult');
+    const div = document.querySelector('.results-text');
     div.textContent = "You won the match!";
+    ngbttncontainer.appendChild(ngbttn);
   } else if (computerCounter === 5) {
-    const div = document.querySelector('#displayResult');
+    const div = document.querySelector('.results-text');
     div.textContent = "The computer won the match!";
+    ngbttncontainer.appendChild(ngbttn);
   }
  }
 });
 
-const scissorsbtn = document.querySelector("#scissors");
+// Scissors button triggers playRound function & displays results/match winner.
+const scissorsbtn = document.querySelector(".scissors-container");
 scissorsbtn.addEventListener('click', () => {
-if (outcomeDisplay.textContent === "You won the match!" || outcomeDisplay.textContent === "The computer won the match!" || outcomeDisplay.textContent === "Please reset the game to play again.") {
-    const div = document.querySelector('#displayResult');
-    div.textContent = "Please reset the game to play again.";
+if (outcomeDisplay.textContent === "You won the match!" || 
+outcomeDisplay.textContent === "The computer won the match!" || 
+outcomeDisplay.textContent === "Game Over.") {
+    const div = document.querySelector('.results-text');
+    div.textContent = "Game Over.";
   } else {
   playerSelection = "scissors";
   computerSelection = getComputerChoice();
@@ -131,77 +156,31 @@ if (outcomeDisplay.textContent === "You won the match!" || outcomeDisplay.textCo
 
   if (result === "You win!") {
     playerCounter++
+    playerScore.textContent = playerCounter;
   } else if (result === "You lose!") {
     computerCounter++
+    computerScore.textContent = computerCounter;
   } 
 
-  console.log(`Player Score = ${playerCounter}`);
-  console.log(`Computer Score = ${computerCounter}`)
-
   if (playerCounter === 5) {
-    const div = document.querySelector('#displayResult');
+    const div = document.querySelector('.results-text');
     div.textContent = "You won the match!";
+    ngbttncontainer.appendChild(ngbttn);
   } else if (computerCounter === 5) {
-    const div = document.querySelector('#displayResult');
+    const div = document.querySelector('.results-text');
     div.textContent = "The computer won the match!";
+    ngbttncontainer.appendChild(ngbttn);
   }
  }
 });
 
-const newGamebttn = document.querySelector('#new-game');
-newGamebttn.addEventListener('click', () => {
-   playerCounter = 0;
-   computerCounter = 0;
-   const div = document.querySelector('#displayResult');
-   div.textContent = " ";
+// Event listener with function to restart game. 
+ngbttn.addEventListener('click', () => {
+  playerCounter = 0;
+  playerScore.textContent = playerCounter;
+  computerCounter = 0;
+  computerScore.textContent = computerCounter;
+  const div = document.querySelector('.results-text');
+  div.textContent = "The first to reach 5 points wins";
+  ngbttncontainer.removeChild(ngbttn);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Function to play a 5 round game that keeps score and reports a winner or loser at the end. 
-
-// function game() {
-//   for (let i = 0; i < 5; i++) {
-//     const playerSelection = getPlayerChoice();
-//     const computerSelection = getComputerChoice();
-//     console.log(playRound(playerSelection, computerSelection));
-// // Player Score Counter
-//     if (result === "You win!") { 
-//         playerCounter++;
-//     } else if (result === "You lose!") {
-//         computerCounter++;
-//     } 
-//     console.log(playerCounter);
-//     console.log(computerCounter);
-// // Match Winner 
-//     if (i === 4 && playerCounter > computerCounter) {
-//         console.log("You win the match!");
-//         const div = document.querySelector('#displayResult');
-//         div.textContent = "You win the match!";
-//     } else if (i === 4 && playerCounter < computerCounter) {
-//         console.log("You lost the game. Bummer!");
-//         const div = document.querySelector('#displayResult');
-//        div.textContent = "You lost the match. Bummer!";
-//     } else if (i === 4 && playerCounter === computerCounter) {
-//         console.log("You tied with the computer!");
-//         const div = document.querySelector('#displayResult');
-//         div.textContent = "You tied with the computer!";
-//     }
-//   }
-// }
-
-// game();

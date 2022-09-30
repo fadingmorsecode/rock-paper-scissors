@@ -1,17 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Rock Paper Scissors</title>      
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
   <script src="javascript.js" defer></script>
+  <title>Document</title>
 </head>
+
 <body>
+  <div class="main">
+    <div class="header">
+      <p class="header-text">Rock - Paper - Scissors</p>
+    </div>
 
-  <button type="button" id="rock">Rock</button>
-  <button type="button" id="paper">Paper</button>
-  <button type="button" id="scissors">Scissors</button>
-  <button type="button" id="new-game">New Game</button>
+    <div class="results-container">
+      <p class="results-text"></p>
+    </div>
 
-  <div id="displayResult"></div>
+    <div class="scoreboard-container">
+      <div class="player-scoreboard">
+        <div class="player-text-container">
+          <p class="player-text">Player</p>
+        </div>
+        <div class="player-score-container">
+          <p class="player-score">0</p>
+        </div>
+      </div>
+
+      <div class="computer-scoreboard">
+        <div class="computer-text-container">
+          <p class="computer-text">Computer</p>
+        </div>
+        <div class="computer-score-container">
+          <p class="computer-score">0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="new-game-container"></div>
+
+    <div class="rps-container">
+      <div class="rock-container" onclick="location.href='#';" style="cursor: pointer;">
+        <p class="rock-text">Rock</p>
+      </div>
+
+      <div class="paper-container" onclick="location.href='#';" style="cursor: pointer;">
+        <p class="paper-text">Paper</p>
+      </div>
+
+      <div class="scissors-container" onclick="location.href='#';" style="cursor: pointer;">
+        <p class="scissors-text">Scissors</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer" onclick="location.href='https://github.com/CobaltJester';" style="cursor: pointer;">
+      <div class="image-container">
+        <img class="footer-img" src="github-logo.png" alt="github logo">
+      </div>
+      <div class=footer-text>
+        CobaltJester
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
 </body>
+
 </html>
