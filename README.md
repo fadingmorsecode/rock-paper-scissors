@@ -1,4 +1,4 @@
-## Tired of having no one to play rock paper scissors with?
+# Tired of having no one to play rock paper scissors with?
 This is perfect for you!
 
 A classic game of rock paper scissors against the computer. See if you can beat the computer in five rounds.
