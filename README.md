@@ -1,5 +1,6 @@
 # Rock Paper Scissors
-
+https://fadingmorsecode.github.io/rock-paper-scissors/
+#
 Tired of having no one to play rock paper scissors with? This is perfect for you!
 A classic game of rock paper scissors against the computer. See if you can beat the computer in five rounds.
 # Project Summary
@@ -7,6 +8,4 @@ Skills utilized in this project include: manipulating the DOM, using multiple ev
 
 I had a lot of fun putting the skills that I have learned so far to the test!
 
-#
 
-Try it out here: https://cobaltjester.github.io/rock-paper-scissors/
